@@ -1,4 +1,6 @@
 import createActions from './actions';
 import { Provider, connect } from './context';
 
-export { createActions, Provider, connect };
+const test = (name) => ( "Welcome " + name );
+
+export { createActions, Provider, connect, test };
