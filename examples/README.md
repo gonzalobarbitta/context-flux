@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-The example is very simple. State will contain a unique model containing information about the logged user. Through the use of **actions** we will allow its name to be modified. To keep things simple, we will initialize the user's information with static data as opposed to retrieving it from somewhere else.
+The example is very simple. State will contain a unique model with information about the logged user. Through the use of  `actions` we will allow its name to be modified. 
 
 #### user.actions.js
 
@@ -27,12 +27,14 @@ export const setName = (store, name) => {
 };
 ```
 
+To keep things simple, we will initialize the user's information with static data as opposed to retrieving it from somewhere else.
+
 #### user.store.js
 
 ```js
 export const createUser = store => ({
   name: 'Gonzalo',
-  age: 31,
+  age: 30,
   actions: createActions(Object.values(actions))(store),
 });
 
