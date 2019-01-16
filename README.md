@@ -67,11 +67,9 @@ import { createStore } from './store';
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Provider store={createStore}>
-          ...
-        </Provider>
-      </div>
+      <Provider store={createStore}>
+        ...
+      </Provider>
     );
   }
 }
@@ -81,7 +79,7 @@ export default App;
 
 ### Step 5: View
 
-Context-flux can be used similarly to native redux integrations. See an example below.
+`context-flux` can be used similarly to native redux integrations. See an example below.
 
 ```jsx
 import React from 'react';
