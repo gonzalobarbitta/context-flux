@@ -1,6 +1,10 @@
 # Context Flux
 
-`context-flux` is a small Context Api based library which can be useful if you need a simple state management, or you want to pass some props deeply without the overkill that comes with Redux or MobX.
+`context-flux` is a small Context Api based library that reduces boilerplate and enforces best practices.
+
+Use `context-flux` if you need a simple state management, or you want to pass some props deeply without the overkill that comes with Redux or MobX.
+
+This library encourages defining actions and state for each model whose data can be considered "global", and then composing these into one object that will be the application's single source of truth.
 
 ## Getting started
 
@@ -8,9 +12,10 @@
 $ npm install --save gonzalobarbitta/context-flux-api
 ```
 
+
 ### Step 1: Actions
 
-**Actions** bring together reducers, async actions & action creators in one place.
+**Actions** are defined for each model. It contains functions that describe how the model's section of the state can be modified. If you are have worked with Redux before, know that these **actions** bring together reducers, async actions & action creators in one place. 
 
 #### user.actions.js
 
@@ -32,15 +37,14 @@ import { createActions } from 'context-flux';
 import * as actions from './user.actions';
 
 export const createUser = store => ({
-  name: '',
-  age: 0,
+  name: 'John Doe',
   actions: createActions(Object.values(actions))(store),
 });
 ```
 
 ### Step 3: Application Store
 
-Define a function that receives the context, and returns an object that combines all separate stores into one.
+Defines a function that receives the context, and returns an object that combines all separate stores into one.
 
 ```
 import { createUser } from "../components/user/user.store";
@@ -53,7 +57,7 @@ export const createStore = context => ({
 
 ### Step 4: Provider
 
- **Provider** is a HOC that when placed in the root of your react hierarchy, will make the store available to the entire application.
+ **Provider** is a HOC that when placed in the root of your react hierarchy, will make the state available to the entire application.
 
 ```
 import React, { Component } from 'react';
