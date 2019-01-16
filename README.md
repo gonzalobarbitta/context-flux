@@ -1,6 +1,6 @@
 # Context Flux
 
-`context-flux` is a small Context Api based library that reduces boilerplate and enforces best practices.
+`context-flux` is a small Context API based library that reduces boilerplate and enforces best practices.
 
 Use `context-flux` if you need a simple state management, or you want to pass some props deeply without the overkill that comes with Redux or MobX.
 
@@ -9,7 +9,7 @@ This library encourages defining actions and state for each model whose data can
 ## Getting started
 
 ```sh
-$ npm install --save gonzalobarbitta/context-flux-api
+$ npm install --save gonzalobarbitta/context-flux
 ```
 
 
